@@ -1,0 +1,58 @@
+
+/* Set gym background image */
+html{
+    background-image: url("gym\ bg.jpg");
+    /* Center background image */
+    background-position: center;
+    /* Scale image to cover entire element */
+    background-size: cover;
+}
+
+.marq{
+    color: black;
+    font-size: 24px;
+    background-color: rgba(255, 255, 255, 0.526) ;
+    border: 5px solid black;
+}
+
+/* Change color of links */
+a:link, :visited{
+    color: black;
+}
+
+/* on mouse hover, change color */
+a:hover {
+    color: grey;
+}
+
+.Title{
+    background-color: rgba(255, 255, 255, 0.526);
+    font-size: 20px;
+    text-align: center;
+    color:  black;
+    border: 6px solid black;
+    
+}
+
+table{
+    border: 6px solid  black;
+    border-collapse: collapse;
+    font-size: 25px;
+    text-align: center;
+    width: 100%;
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.526);
+    
+}
+
+
+.paragraph{
+    background-color: rgba(111, 111, 107, 0.526);
+    font-size: 25px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    
+}
+img{
+    width: 18%;
+}

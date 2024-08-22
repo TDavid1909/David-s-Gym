@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="form style.css">
+        <title>Introduction Page</title>
+    </head>
+    <body>
+        <script>
+            //the do submit function becomes complicated for the same reason of havin other 9 functions to check every single field individuali
+            function doSubmit(){
+                var fname = FirstName();
+                var lname = LastName();
+                var date = Date();
+                var wy = Why();
+                var genders = Gender();
+                var email = Email();
+                var weight = Weight();
+                var height = Height();
+                var pin = Pin();
+                var phone = Phone();
+                if (fname == false){
+                    alert("Please enter your first name");
+                    return false;
+                }
+                else if(lname == false){
+                    alert ("Please enter your last name")
+                    return false;
+                }
+                else if(date == false){
+                    alert("Please select a valid date of birth.")
+                    return false;
+                }
+                else if(wy == false){
+                    alert("Why are you interested in the gym? Please provide an explanation.");
+                    return false;
+                }
+                else if (genders == false){
+                    alert("Please indicate your gender.");
+                    return false;
+                }
+                else if(email == false){
+                    alert("Please enter a valid e-mail address.");
+                    return false;
+                }
+                else if(weight == false){
+                    alert("Please enter your current weight in pounds.");
+                    return false;
+                }
+                else if(height == false){
+                    alert("Please enter your height in inches.");
+                    return false;
+                }
+                else if(pin == false){
+                    alert("Pin must be 4 digits long and contain only numbers.");
+                    return false;
+                }
+                else if(phone == false){
+                    alert("Phone number should not include any special characters or spaces. It should also be 10 to 12 digits long.");
+                    return false;
+                }
+                else{
+                    alert("You form has been submited!");
+                    return false;
+                }
+            }
+            function doClear(){
+                document.gymform.fname.value = "";
+                document.gymform.lname.value = "";
+                document.gymform.dob.value = "";
+                document.gymform.gender[0].checked = false;
+                document.gymform.gender[1].checked = false;
+                document.gymform.gender[2].checked = false;
+                document.gymform.email.value = "";
+                document.gymform.phone.value = "";
+                document.gymform.why[0].checked = false;
+                document.gymform.why[1].checked = false;
+                document.gymform.why[2].checked = false;
+                document.gymform.other.value = "";
+                document.gymform.weight.value = "";
+                document.gymform.height.value = "";
+                document.gymform.pin.value = "";
+                
+            }
+            //I would do 9 functions, could be a easier way but this is the only way that i know
+
+            function FirstName(){
+                var fname = document.gymform.fname.value;
+                if(fname.length == 0) return false;
+                else return true;
+
+            }
+            function LastName(){
+                var lname = document.gymform.lname.value;
+                if(lname.length == 0) return false;
+                else return true;
+            }
+            function Date(){
+                var dob = document.gymform.dob.value;
+                if(dob.length == 0) return false;
+                else return true;
+
+            }
+            function Why(){
+                if(document.gymform.why[0].checked) return false;
+                if(document.gymform.why[1].checked) return false;
+                else return true;
+            }
+            function Gender(){
+                if(document.gymform.gender[0].checked) return false;
+                if(document.gymform.gender[1].checked) return false;
+                if(document.gymform.gender[2].checked) return false;
+                else return true;
+            }
+            function Email(){
+                var email = document.gymform.email.value;
+                if(email.length == 0) return false;
+                else return true;
+
+            }
+            function Weight(){
+                var weight = document.gymform.weight.value;
+                if(weight.length == 0) return false;
+                else return true;
+            }
+            function Height(){
+                var height = document.gymform.weight.value;
+                if(height.length == 0) return false;
+                else return true;
+            }
+            function Phone(){
+                var phone = document.gymform.phone.value;
+                if(phone.length == 0) return false;
+                return true;
+            }
+            function Pin(){
+                var pin = document.gymform.pin.value;
+                if(pin.length == 0) return false;
+                else return true;
+
+            }
+    
+        </script>
+
+       <div class="Title" ><h1>GYM FORM</h1></div>
+    
+
+        <table>
+            <tr>
+            <td><a href="index.html">Start</a></td>
+            <td><a href="form.html">Form</a></td>
+          
+            </tr>
+        </table>
+
+        <marquee class="marq">ATTENTION ALL NEW MEMBERS MUST FILL THE <b>FORM</b> BEFORE ENTERING THE GYM</marquee>
+<!--I like to organize everithing on a table-->
+    <form name="gymform">
+        <table class="form">
+            <tr>
+            <td>
+                FIRSTNAME: <input type="text" name="fname" id="fname" maxlength="10">
+            </td>
+            <td>
+                LASTNAME: <input type="text" name="lname" id="lname" maxlength="10">
+            </td>
+            </tr>
+            <tr>
+                <td>
+                    DOB: <input type="text" name="dob" id="dob" maxlength="10">
+                </td>
+                <td>
+                    GENDER: 
+                    <br>
+                    <input type="radio" name="gender" id="women">Women
+                    <input type="radio" name="gender" id="men">Men
+                    <input type="radio" name="gender" id="none">None
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    EMAIL ADDRESS:  <input type="email" name="email" id="email" maxlength="30">
+                </td>
+                <td>
+                    PHONENUMBER:   <input type="tel" name="phone" id="phone" maxlength="12">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    FOR WHAT REASON YOU ENTR THE GYM: <br>
+                    <input type="checkbox" name="why" id="why1">Health
+                    <input type="checkbox" name="why" id="why2">Exercise
+                    <input type="checkbox" name="why" id="why3">Weight Loss<br>
+                    OTHER REASON: <input type="message" name="other" id="ot" maxlength="20"> 
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    WEIGHT: <input type="text" name="weight" id="wg" maxlength="3">
+                </td>
+                <td>
+                    HEIGHT: <input type="text" name="height" id="hg" maxlength="3">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    PIN FOR ACCESS THE GYM: 
+                    <br>
+                    <input type="password" name="pin" id="pwd" maxlength="4">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <br>
+                    <div style="text-align: center;">DO YOU HAVE ANYTHING TO LET US KNOW BEFORE YOU COME TO THE GYM?
+                    <br>
+                    <textarea name="question" id="QUE" cols="30" rows="6"></textarea></div>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div class="buttons">    
+    <input type="button" name="submit" id="submit" onclick="return doSubmit()" value="SUBMIT">
+    <input type="button" name="clear" id="clear" value="CLEAR" onclick="doClear()">
+    </div>
+    
+    </body>
+</html>
